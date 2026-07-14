@@ -148,8 +148,46 @@ export default function Home() {
         "Git",
         "Docker"
       ]
-    }
-];
+    },
+    {
+      company: "Instituto NEXORA",
+      role: "Desenvolvedor Full Stack",
+      period: "2026 – Atual",
+      description:
+        "Desenvolvimento de uma plataforma web voltada à inclusão digital e conexão entre estudantes e empresas. Atuação no desenvolvimento front-end e integração com serviços back-end, utilizando arquitetura MVVM, boas práticas de desenvolvimento e metodologias ágeis.",
+
+      achievements: [
+        "Desenvolvimento de interfaces responsivas utilizando React, Next.js, TypeScript e Tailwind CSS.",
+        "Participação no levantamento de requisitos e planejamento das funcionalidades da plataforma.",
+        "Integração com APIs REST para comunicação entre o front-end e os serviços back-end.",
+        "Implementação de componentes reutilizáveis seguindo a arquitetura MVVM.",
+        "Implementação de Server-Side Rendering (SSR) para otimização de desempenho e SEO.",
+        "Validação de formulários utilizando React Hook Form e Zod.",
+        "Persistência e gerenciamento de dados utilizando Supabase.",
+        "Colaboração em equipe utilizando metodologias ágeis Scrum e Kanban."
+      ],
+
+      technologies: [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "JavaScript",
+        "Tailwind CSS",
+        "HTML5",
+        "CSS3",
+        "Supabase",
+        "REST API",
+        "SSR",
+        "MVVM",
+        "React Hook Form",
+        "Zod",
+        "Git",
+        "GitHub",
+        "Scrum",
+        "Kanban"
+      ]
+    }   
+    ];
 
   return (
     <>
