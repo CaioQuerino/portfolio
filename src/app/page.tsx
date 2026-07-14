@@ -3,7 +3,6 @@
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import curriculo from "../../public/docs/Caio_Querino_Curriculo_MPRJ.pdf"
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,7 +29,7 @@ export default function Home() {
       });
     }, observerOptions);
 
-    document.querySelectorAll(".tech-card, .project-card, .education-item, .contact-method").forEach((el) => {
+    document.querySelectorAll(".tech-card, .project-card, .experience-card, .education-item, .contact-method").forEach((el) => {
       (el as HTMLElement).style.opacity = "0";
       (el as HTMLElement).style.transform = "translateY(30px)";
       (el as HTMLElement).style.transition = "opacity 0.6s ease, transform 0.6s ease";
@@ -61,17 +60,24 @@ export default function Home() {
     {
       title: "Portal NEXORA - FullStack",
       description: "Plataforma de impacto social focada em inclusão digital. Implementação de arquitetura orientada a serviços com foco em escalabilidade e conversão de leads .",
-      tags: ["Node", "Next", "Supabase", "TypeScript", "Padrão MVVM"],
+      tags: ["Node", "Next", "Supabase", "TypeScript", "Synapos", "MVVM"],
       link: "https://github.com/Instituto-Nexora/Portal_NEXORA",
+      status: "Em andamento"
+    },
+    {
+      title: "PagFlow API",
+      description: "API para simular um fluxo bancário digital com cadastro de usuários, autenticação JWT, contas digitais, depósitos, saques, transferências PIX, histórico, webhooks, documentação Swagger, react e tailwind para frontend.",
+      tags: ["Node.js", "Express", "TypeScript", "Prisma", "PostgresSQL", "Zod", "Jwt", "Swagger", "React", "Tailwind CSS", "Docker"],
+      link: "https://github.com/CaioQuerino/PagFlow_API",
       status: "Em andamento"
     },
     {
       title: "Banco Digital",
       description: "API REST para gerenciamento de contas bancárias, clientes e operações financeiras. Implementa regras de negócio para contas digitais, persistência relacional com JPA, validações, controle transacional e arquitetura em camadas utilizando Spring Boot.",
-      tags: ["Java 21", "Spring Web", "Spring Data JPA", "Spring Security", "JWT", "Swagger", "lombok", "Validation", "PostgreSQL", "Padrão MVC"],
+      tags: ["Java 21", "Spring Boot", "Spring Data JPA", "Spring Security", "PostgreSQL", "Lombok", "Validation", "Swagger", "Docker"],
       link: "https://github.com/CaioQuerino/bancodigital",
-      status: "Em andamento"
-    },
+      status: "Finalizado"
+    },    
     {
       title: "Pipelines unificados de processamento de logs",
       description: "Projeto de Engenharia de Dados focado na construção de pipelines ETL escaláveis ​​para processamento de logs em larga escala. Utilize Apache Spark para processamento distribuído, AWS S3 como Data Lake e ScyllaDB para armazenamento de análises analíticas, aplicando práticas de anonimização de dados e observabilidade.",
@@ -101,10 +107,49 @@ export default function Home() {
     { name: "MySQL", icon: "mysql" },
     { name: "PostgreSQL", icon: "postgresql" },
     { name: "Supabase", icon: "supabase" },
+    { name: "Prisma", icon: "prisma" },
     { name: "Docker", icon: "docker" },
     { name: "Git", icon: "git" },
     { name: "Postman", icon: "postman" }
   ];
+
+  const experiences = [
+    {
+      company: "Compass UOL",
+      role: "Estagiário em Data & Inteligência Artificial",
+      period: "Nov 2024 – Fev 2025",
+      description:
+        "Atuação no desenvolvimento de soluções para Engenharia de Dados e Inteligência Artificial utilizando Python, SQL e serviços AWS. Participação na construção de pipelines ETL, processamento distribuído de dados com Apache Spark, modelagem de dados e implementação de arquiteturas em nuvem voltadas para ambientes analíticos.",
+
+      achievements: [
+        "Desenvolvimento de pipelines ETL utilizando Python e SQL.",
+        "Processamento distribuído de grandes volumes de dados com Apache Spark.",
+        "Utilização de serviços AWS para armazenamento, processamento e orquestração de dados.",
+        "Manipulação e análise de dados com Pandas e NumPy.",
+        "Modelagem e visualização de dados para suporte à tomada de decisão.",
+        "Colaboração em equipes ágeis seguindo boas práticas de desenvolvimento."
+      ],
+
+      technologies: [
+        "Python",
+        "SQL",
+        "Pandas",
+        "NumPy",
+        "Apache Spark",
+        "AWS IAM",
+        "AWS EC2",
+        "AWS VPC",
+        "AWS Lambda",
+        "AWS Step Functions",
+        "AWS EMR",
+        "AWS Glue",
+        "AWS Athena",
+        "AWS QuickSight",
+        "Git",
+        "Docker"
+      ]
+    }
+];
 
   return (
     <>
@@ -114,10 +159,10 @@ export default function Home() {
             <Link href="#home" className="text-[#00d4ff] hover:text-[#0099cc] transition-colors">Caio Querino</Link>
           </div>
           <ul className={`md:flex gap-8 list-none ${isMenuOpen ? "flex flex-col absolute top-[70px] left-0 w-full bg-[#0f0f23]/98 p-8 border-t border-[#00d4ff]/20" : "hidden"}`}>
-            {["home", "about", "skills", "projects", "education", "contact"].map((item) => (
+            {[ "home", "about", "skills", "experience", "projects", "education", "contact"].map((item) => (
               <li key={item} className="my-2 md:my-0">
                 <Link href={`#${item}`} className="text-[#e4e6ea] font-medium hover:text-[#00d4ff] relative group transition-colors" onClick={() => setIsMenuOpen(false)}>
-                  {item === "home" ? "Início" : item === "about" ? "Sobre" : item === "skills" ? "Tecnologias" : item === "education" ? "Educação" : item === "contact" ? "Contato" : item.charAt(0).toUpperCase() + item.slice(1)}
+                  { item === "home" ? "Início" : item === "about" ? "Sobre" : item === "skills" ? "Tecnologias"  : item === "experience" ? "Experiência" : item === "projects" ? "Projetos" : item === "education" ? "Educação" : item === "contact" ? "Contato" : item}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#00d4ff] transition-all group-hover:w-full"></span>
                 </Link>
               </li>
@@ -150,7 +195,7 @@ export default function Home() {
               <p className="text-lg text-[#a8a8a8] mb-8 max-w-[600px] mx-auto">24 anos · Formando em Análise e Desenvolvimento de Sistemas · Foco em Java, Spring, APIs REST, AWS e boas práticas.</p>
 
               <div className="flex flex-wrap gap-4 justify-center mb-8">
-                <a href="/docs/Caio_Querino_Curriculo_MPRJ.pdf" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-br from-[#00d4ff] to-[#0099cc] text-white font-semibold hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,212,255,0.2)] transition-all duration-300" download>
+                <a href="/docs/caio-curriculo-desenvolvedor.pdf" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-br from-[#00d4ff] to-[#0099cc] text-white font-semibold hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,212,255,0.2)] transition-all duration-300" download>
                   <i className="fas fa-download"></i> Baixar Currículo
                 </a>
               </div>
@@ -171,9 +216,18 @@ export default function Home() {
           <div className="max-w-[1200px] mx-auto px-4 sm:px-8">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-[#00d4ff] to-[#0099cc] bg-clip-text text-transparent relative after:content-[''] after:absolute after:-bottom-3 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-gradient-to-r after:from-[#00d4ff] after:to-[#0099cc] after:rounded-full">Sobre Mim</h2>
             <div className="max-w-[800px] mx-auto text-center text-lg text-[#a8a8a8] leading-relaxed space-y-6">
-              <p>Brasileiro, 24 anos. Meu primeiro contato com programação foi em 2010. Desde então, decidi seguir na área de T.I. com foco em desenvolvimento backend.</p>
-              <p>Atualmente meus estudos estão focados em <strong className="text-white">Java e Spring Framework</strong>. Tenho sólida aplicação de <strong className="text-white">Design Patterns, Arquitetura em Camadas, Princípios SOLID</strong> e boas práticas na construção de <strong className="text-white">APIs REST</strong>.</p>
-              <p>Possuo familiaridade com metodologias ágeis (Scrum e Kanban) e experiência em serviços de <strong className="text-white">cloud AWS</strong> (EC2, S3, Route 53, RDS, ECS e EKS) para deploy e operação de aplicações.</p>
+              <p>
+                Desenvolvedor Full Stack Júnior com experiência no desenvolvimento de aplicações web utilizando React, Next.js,
+                Node.js, JavaScript e TypeScript.
+              </p>
+              <p>
+                Perfil colaborativo, com facilidade para aprender, participar de reuniões de alinhamento e
+                desenvolver soluções voltadas às necessidades dos usuários.
+              </p>
+              <p>
+                Possuo experiência na criação de interfaces responsivas, integração com APIs REST, manutenção de aplicações e desenvolvimento de funcionalidades back-end. Tenho conhecimento
+                em levantamento de requisitos, modelagem de processos, Git, Docker, AWS e metodologias ágeis (Scrum eKanban).
+              </p>
             </div>
           </div>
         </section>
@@ -192,6 +246,73 @@ export default function Home() {
                     />
                   </div>
                   <span className="text-sm text-[#a8a8a8] group-hover:text-white transition-colors">{tech.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="experience" className="py-20">
+          <div className="max-w-[1200px] mx-auto px-4 sm:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-[#00d4ff] to-[#0099cc] bg-clip-text text-transparent">
+              Experiência Profissional
+            </h2>
+
+            <div className="space-y-8">
+              {experiences.map((experience) => (
+                <div
+                  key={experience.company}
+                  className="experience-card p-8 rounded-2xl bg-[#1a1a2e] border border-[#00d4ff]/10 hover:border-[#00d4ff]/40 transition-all duration-300"
+                >
+                  <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-6">
+                    <div>
+                      <h3 className="text-2xl font-bold text-white">
+                        {experience.role}
+                      </h3>
+
+                      <p className="text-[#00d4ff] text-lg font-medium">
+                        {experience.company}
+                      </p>
+                    </div>
+
+                    <span className="px-4 py-2 rounded-full bg-[#00d4ff]/10 border border-[#00d4ff]/20 text-[#00d4ff] text-sm">
+                      {experience.period}
+                    </span>
+                  </div>
+
+                  <p className="text-[#a8a8a8] leading-relaxed mb-6">
+                    {experience.description}
+                  </p>
+
+                  <h4 className="text-white font-semibold mb-3">
+                    Principais atividades
+                  </h4>
+
+                  <ul className="space-y-2 mb-6">
+                    {experience.achievements.map((item) => (
+                      <li
+                        key={item}
+                        className="flex gap-3 text-[#a8a8a8]"
+                      >
+                        <span className="text-[#00d4ff] mt-1">
+                          <i className="fas fa-check-circle"></i>
+                        </span>
+
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="flex flex-wrap gap-2">
+                    {experience.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-3 py-1 rounded-full bg-[#00d4ff]/10 text-[#00d4ff] border border-[#00d4ff]/20 text-xs"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
