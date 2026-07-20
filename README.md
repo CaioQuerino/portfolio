@@ -34,8 +34,8 @@ Atualmente curso **Análise e Desenvolvimento de Sistemas** e estou focado na co
 | :--- | :--- | :--- | :--- |
 | **Portal NEXORA** | Plataforma de impacto social focada em inclusão digital. Implementação de arquitetura orientada a serviços com foco em **escalabilidade e conversão de leads**. | Node, Next, Supabase, TypeScript, Synapos, MVVM | [Acessar](https://github.com/Instituto-Nexora/Portal_NEXORA) |
 | **Banco Digital** | API REST para gerenciamento de contas bancárias, clientes e operações financeiras. Implementa regras de negócio para contas digitais, persistência relacional com JPA, validações, controle transacional e arquitetura em camadas utilizando Spring Boot. | Java 21, Spring Boot, Spring Data JPA, Spring Security, PostgreSQL, Lombok, Validation, Swagger, Docker | [Acessar](https://github.com/CaioQuerino/bancodigital) |
-| **PagFlow API** | API para simular um fluxo bancário digital com cadastro de usuários, autenticação JWT, contas digitais, depósitos, saques, transferências PIX, histórico, webhooks e documentação Swagger. | Node.js Express, TypeScript, Prisma, PostgresSQL, Zod, Jwt, Swagger, Docker | [Acessar](https://github.com/CaioQuerino/PagFlow_API) |
-| **Landing Page Pratizen** | Landing Page construída com o intuito de divulgar um App. | HTML, CSS | [Acessar](https://github.com/CaioQuerino/landing-page-pratizen) |
+| **PagFlow API** | API para simular um fluxo bancário digital com cadastro de usuários, autenticação JWT, contas digitais, depósitos, saques, transferências PIX, histórico, webhooks, documentação Swagger, react e tailwind para frontend. | Node.js Express, TypeScript, Prisma, PostgresSQL, Zod, Jwt, Swagger, React, Tailwind CSS, Docker | [Acessar](https://github.com/CaioQuerino/PagFlow_API) |
+| **Data_Science_Projects** | Repositório com alguns projetos Data Science. | Pandas, Numpy, SQLAlchemy, Kagglehub, Apscheduler, Logger | [Acessar](https://github.com/CaioQuerino/Data_Science_Projects) |
 ---
 
 # 📚 Atualmente estudando
