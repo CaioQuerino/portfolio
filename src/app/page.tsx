@@ -396,7 +396,7 @@ export default function Home() {
                   </div>
                   <div className="text-right">
                     <span className="px-4 py-2 rounded-full bg-[#00d4ff]/10 text-[#00d4ff] text-sm border border-[#00d4ff]/20">
-                      Concluído
+                      Em andamento
                     </span>
                   </div>
                 </div>
